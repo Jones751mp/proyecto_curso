@@ -1,0 +1,17 @@
+
+<body>
+    <% result.forEach( item => {%>
+        <div>
+            <ul>
+                <li>
+                    nombre: <%= item.nombre%>
+                </li>
+                <li>
+                    precio: <%= item.precio %>
+                </li>
+            </ul>
+            <button>Eliminar</button>
+        </div>
+    <% }) %>
+</body>
+</html>
