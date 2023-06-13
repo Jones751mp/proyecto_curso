@@ -5,12 +5,16 @@ const router = Router();
 
 router.route('/') // esta es para obtener informacion de los platos
     .get(platos.getPlatos)
-    .post()
+    .post(platos.createPlato)
 
 router.route('/:id')
     .get(platos.getPlatoById)
-    .delete()
+    .delete(platos.deletePlatoById)
     .put()
+
+router.get('/create/plato',platos.renderCreatePlato)
+router.get('/update/:id',platos.renderUpdatePlato)
+
 //publicar datos
 //eliminar platos
 

@@ -1,0 +1,65 @@
+<%-include("../partials/head", {
+    title:"Registro",
+    css:"registro"
+})  %>
+<body>
+    <header>
+        <%-include("../partials/navbar")%>
+    </header>
+    <main class="d-flex align-items-center justify-content-center">
+
+        <div class="caja_1 col-4 container ">
+            
+            <form action="/registrarse" method="post" class="row">
+                <div class="mb-3 col-12">
+                    <p class="titulo_1 text-center">Registrarse</p>
+                </div>
+                <div class="mb-3 col-6">
+                    <h3>Nombre</h3>
+                    <input class="nombre form-control" type="text" name="nombre" maxlength="50" placeholder="Pedro" >
+                </div>
+                
+                <div class="mb-3 col-6">
+                    <h3>Apellido</h3>
+                    <input class="apellido form-control" type="text" name="apellido" maxlength="50" placeholder="Perez">                    
+                </div>
+                
+                <div class="mb-3 col-6">
+                    <h3>Correo</h3>
+                    <input class="email form-control" type="email" name="email" maxlength="50" placeholder="correo1@gmail.com" >
+                </div>
+                
+                <div class="mb-3 col-6">
+                    <h3>Fecha de nacimiento</h3>
+                    <input class="f_nacimieno form-control" type="date" name="f_nacimiento">
+                </div>
+                
+                <div class="mb-3 col-6">
+                    <h3>Contraseña</h3>
+                    <input class="password form-control" type="password" name="password" placeholder="******">
+                </div>
+
+                <div class="mb-3 col-6">
+                    <h3>Número de Telefono</h3>
+                    <input class="telefono form-control" type="text" name="telefono" maxlength="14" placeholder="Nro de movil">
+                </div>
+                
+                <div class="mb-3 col-6">
+                    <h3>Confirmar Contraseña</h3>
+                    <input class="confirm_password form-control" type="password" name="confirmPassword" placeholder="******">
+                </div>
+                
+                <div class="mb-3 col-12">
+                    <input class="registrarse form-control" type="submit" value="Registrarse">
+                </div>
+
+
+            </form>
+        </div>  
+
+    </main>
+</body>
+
+<!--NO CREE QUE ES MEJOR QUITAR LA NAVBAR AQUI?
+no me deja hacer divs
+-->

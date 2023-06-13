@@ -1,17 +1,25 @@
-
+<%-include('../partials/head',{
+    title:"Productos",
+    css:"index"
+})%>
 <body>
+    <header>
+        <%-include('../partials/navbar')%>
+    </header>
     <% result.forEach( item => {%>
         <div>
             <ul>
                 <li>
-                    nombre: <%= item.nombre%>
+                    <a href="/platos/<%= item.id%>">nombre: <%= item.nombre%> </a>
                 </li>
                 <li>
                     precio: <%= item.precio %>
                 </li>
             </ul>
-            <button>Eliminar</button>
+            <button class="btn btn-danger" id="delete" data-id="<%=item.id%>">Eliminar</button>
         </div>
     <% }) %>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/platos.js"></script>
 </body>
 </html>

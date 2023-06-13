@@ -1,0 +1,37 @@
+<%-include('../partials/head.ejs',{
+    title:"Crear producto",
+    css:"create"
+})%>
+<header>
+    <%-include("../partials/navbar")%>
+</header>
+    <div class="container caja_reg col-4">
+        <form action="/platos/" method="post" class="row">
+            <div class="titulo">
+                <h1> Registro de Platillos </h1>
+            </div>
+            <div class="mb-3 caja1 col-12">
+                <h6>Ingrese el platillo a incluir:</h6>
+                <input type="text" name="nombre"  class="form-control" >
+            </div>
+            <div class="mb-3 col-12">
+                <h6>Ingrese el precio a incluir:</h6>
+                <input type="number" name="precio" min="1" class="form-control">
+            </div>
+            <div class="mb-3 col-12">
+                <select name="id_categoria" class="form-select">
+                    <option>elija la categoria</option>
+                    <% categorias.forEach(item => { %>
+                        <option value="<%=item.id%>"><%=item.nombre%></option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <div class="mb-3 col-12">
+                <button class="btn btn-danger form-control"> Guardar </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

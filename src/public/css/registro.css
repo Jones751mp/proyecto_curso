@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body {
+    color: white;
+    /*background-color: #2c3e50;*/
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to right, #2c3e50, #3498db);
+    background: linear-gradient(to right,#2c3e50, #2c3e50); 
+    
+
+}
+.titulo_1 {
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+     
+}
+
+.caja_1 {
+
+    width: 50%;
+    margin-top: 2%;
+    padding: 20px;
+    border-radius: 50px;
+    background: #136a8a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+h3 {
+    font-size: 15px;
+}
+
+

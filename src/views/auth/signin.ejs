@@ -1,0 +1,24 @@
+<%-include('../partials/head',{
+    title:"ingresar",
+    css:"signin"
+})%>
+
+<header>
+    <%-include('../partials/navbar')%>
+</header>
+
+<main>
+    <div class="container col-12">
+        <div class="row">
+            <form action="/ingresar" method="post">
+                <input type="email" name="email">
+                <input type="password" name="password">
+                <input type="submit" value="Ingresar">
+            </form>
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>

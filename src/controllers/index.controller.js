@@ -1,13 +1,20 @@
+import auth from "../lib/auth.js";
 export const index = {}
 
+
+
 index.home = (req,res)=> {
-    res.render("index");
+    const user = auth.existsUser(req)
+    res.render("index",{user});
 }
 
 index.about = (req,res)=> {
-    res.render("about");
+    const user = auth.existsUser(req)
+
+    res.render("about",{user});
 }
 
 index.contact = (req,res)=>{
-    res.render("contact");
+    const user = auth.existsUser(req)
+    res.render("contact",{user});
 }

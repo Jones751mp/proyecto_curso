@@ -1,0 +1,18 @@
+Modulo intermedio proyecto
+Restaurant
+Secciones
+Login
+Registre
+Index
+Platos incluir y quitar dinámicamente desde el usuario de admin(desayunos, almuerzos y cenas)
+Barra( bebidas cócteles y botellas)
+Promociones
+Pedido por pag
+Personal por secciones
+Tres secciones de entrada(admin, gerente y empleado)
+Conteo de visualizaciones
+Y cambiado de idioma
+Reservaciones
+Calificación del lugar
+Hora
+ Enlaces, barra de navegación pir de pág y sección de contacto

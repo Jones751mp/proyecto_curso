@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+body {
+    background-color: #333;
+    color: #ffff;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 5%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+.caja_reg{
+    margin-top: 10%; 
+    padding: 10px;
+    border-radius: 11px;
+    background: #bf0808;
+    box-shadow:  8px 2px 36px black,
+                 -5px -5px 25px rgb(188, 187, 187);
+}

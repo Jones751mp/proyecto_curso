@@ -3,3 +3,12 @@ body {
     color: #fff;
 }
 
+.caja {
+    width: 10%;
+    height: 5%;
+    text-align: center;
+    margin: 30px;
+    margin-left: 50;
+    background-color: red;
+}
+
