@@ -7,13 +7,14 @@ body {
     background: #23242a;
     min-height: 100vh;
 }
-.titulo_1 {
+
+.text-center { 
     font-size: 25px;
     text-align: center;
     border-radius: 10px;
 }
 
-.caja_1 {
+.row {
     position: relative;
     margin-top: 2%;
     padding: 20px;
@@ -22,9 +23,8 @@ body {
     overflow: hidden;
 }
 
-
-h3 {
-    font-size: 15px;
+.form {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px black;
+    
 }
-
-

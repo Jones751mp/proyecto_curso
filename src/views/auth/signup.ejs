@@ -6,8 +6,8 @@
     <header>
         <%-include("../partials/navbar")%>
     </header>
-    <main class="d-flex align-items-center justify-content-center">
-
+    <main>
+        
         <div class="caja_1 col-4 container ">
             
             <form action="/registrarse" method="post" class="row">
@@ -52,14 +52,13 @@
                 <div class="mb-3 col-12">
                     <input class="registrarse form-control" type="submit" value="Registrarse">
                 </div>
-
-
             </form>
-        </div>  
-
+        </div>
+        <div class="container mt-3 col-3">
+            <%- include('../messages/auth.ejs') %>
+        </div>
     </main>
-</body>
-
+<%-include('../partials/footer')%>
 <!--NO CREE QUE ES MEJOR QUITAR LA NAVBAR AQUI?
 no me deja hacer divs
 -->

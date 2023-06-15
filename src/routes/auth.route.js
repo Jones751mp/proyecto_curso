@@ -14,4 +14,6 @@ router.route("/ingresar")
     .post(validar.inactivo,auth.signinValidate)
 
 
+
+
 export default router;

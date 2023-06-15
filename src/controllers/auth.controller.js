@@ -11,6 +11,7 @@ auth.signup = (req,res)=> {
 }
 
 auth.signupValidate = async(req,res) =>{
+    // return res.send("formulario en mantenimieto").redirect("/")
     try {
         const {
             nombre,
@@ -27,7 +28,7 @@ auth.signupValidate = async(req,res) =>{
             return res.redirect("/auth");
         }
 
-        const newPassword = await helpers.encryptPassword(getPassword)
+        const newPassword = await helpers.encryptPassword(password)
 
 
 
@@ -43,6 +44,7 @@ auth.signupValidate = async(req,res) =>{
 
         const [result] = await pool.query("INSERT INTO usuarios SET ?", [newUser]);
         newUser.id = result.insertId
+        newUser.tipo_usuario = 'user';
 
         const token = jwt.sign(newUser,"secret");
         res.cookie("session",token);
@@ -50,6 +52,8 @@ auth.signupValidate = async(req,res) =>{
     }
     catch (err) {
         console.error(err)
+        req.flash("error","no se pudo realizar el registro")
+        return res.redirect("/registrarse")
     }
 }
 
@@ -59,11 +63,12 @@ auth.signin = (req,res)=> {
 }
 
 auth.signinValidate = async(req,res)=>{
-    const { email,password } = req.body;
-
+    try {
+        const { email,password } = req.body;
+    // return res.send("ingresar esta en mantenimiento").redirect("/")
     if(!email || !password) {
         req.flash("error","por favor rellene todos los campos")
-        return res.redirect("/auth")
+        return res.redirect("/ingresar")
     }
 
     const [result] = await pool.query("SELECT * FROM usuarios WHERE email = ?",[email]);
@@ -77,7 +82,10 @@ auth.signinValidate = async(req,res)=>{
         }
     }
 
-
-
-
+    } catch(err) {
+        console.error(err)
+        req.flash("error","el usuario no se encuentra registrado")
+        return res.redirect("/ingresar")
+    }
 }
+
