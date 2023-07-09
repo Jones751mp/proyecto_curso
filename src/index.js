@@ -1,8 +1,7 @@
 import express          from          'express';
 import router           from          './routes/index.routes.js'
 import platos           from          './routes/platos.routes.js'
-import auth             from './routes/auth.route.js';
-import validate from './lib/auth.js'
+
 import user from './routes/user.route.js';
 import                                'ejs'
 import { resolve,join } from          'path'
