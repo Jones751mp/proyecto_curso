@@ -6,9 +6,9 @@
     <header>
         <%-include('../partials/navbar')%>
     </header>
-    <% result.forEach( item => {%>
-        <div>
-            <ul>
+    <div class="container">
+        <% result.forEach( item => {%>
+            <ul class="">
                 <li>
                     <a href="/platos/<%= item.id%>">nombre: <%= item.nombre%> </a>
                 </li>
@@ -17,8 +17,8 @@
                 </li>
             </ul>
             <button class="btn btn-danger" id="delete" data-id="<%=item.id%>">Eliminar</button>
-        </div>
-    <% }) %>
+        <% }) %>
+    </div>
     <%-include('../partials/footer.ejs',{
         js:["platos"]
     })%>

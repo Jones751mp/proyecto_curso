@@ -14,7 +14,6 @@ CREATE TABLE platos (
     nombre VARCHAR(50) NOT NULL,
     precio DECIMAL(10,2),
     id_categoria INT NOT NULL,
-    img VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_categoria) REFERENCES categorias(id)
 );
 

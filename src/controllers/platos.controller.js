@@ -41,7 +41,6 @@ platos.renderCreatePlato = async(req,res) =>{
 platos.createPlato = async(req,res)=> {
     try {
         const {nombre,precio,id_categoria} = req.body
-        const img = platos.image(req)
         const newProduct = {
             nombre,
             precio:parseInt(precio),
