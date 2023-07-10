@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {auth} from '../controllers/auth.controller.js'
+import { auth } from '../controllers/auth.controller.js'
 import validar from '../lib/auth.js'
 
 

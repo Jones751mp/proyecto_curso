@@ -24,9 +24,19 @@ CREATE TABLE usuarios(
     email VARCHAR(50),
     f_nacimiento DATE NOT NULL,
     telefono VARCHAR(14),
-    password VARCHAR(100) NOT NULL,
-    tipo_usuario SET ('admin','user','empleado') DEFAULT 'user'
+    password VARCHAR(100) NOT NULL
 );
+-- 2
+DROP TABLE usuarios;
+
+CREATE TABLE tipos_usuarios(
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tipo VARCHAR(20)
+);
+
+INSERT INTO tipos_usuarios (tipo) VALUES ("usuario"),("admin"),("empleado");
+
+
 
 CREATE TABLE pedidos_clientes(
     id_usuario INT NOT NULL,
@@ -36,6 +46,10 @@ CREATE TABLE pedidos_clientes(
     FOREIGN KEY (id_plato) REFERENCES platos(id)
 );
 
+-- 1
+DROP TABLE pedidos_clientes;
+
+--reservaciones
 
 
 

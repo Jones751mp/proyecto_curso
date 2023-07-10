@@ -1,8 +1,8 @@
 import express          from          'express';
 import router           from          './routes/index.routes.js'
 import platos           from          './routes/platos.routes.js'
-
-import user from './routes/user.route.js';
+import auth from './routes/auth.routes.js';
+import user from './routes/user.routes.js';
 import                                'ejs'
 import { resolve,join } from          'path'
 import morgan           from          'morgan';
