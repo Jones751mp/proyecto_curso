@@ -1,6 +1,6 @@
 <%-include('../partials/head',{
     title: user[0].name,
-    css:""
+    css:[]
 })%>
 
 <body>
@@ -13,8 +13,18 @@
 <main>
     <form>
         <div class="mb-3">
-            <input type="text" value="<%=user[0].name%>"/>
+            <input type="text" value="<%=user[0].nombre%>"/>
         </div>
+        <div class="mb-3">
+            <input type="text" value="<%=user[0].apellido%>"/>
+        </div>
+        <div class="mb-3">
+            <input type="email" value="<%=user[0].email%>"/>
+        </div>
+        <div class="mb-3">
+            <input type="text" value="<%=user[0].telefono%>"/>
+        </div>
+        <input type="submit">
     </form>
 </main>
 

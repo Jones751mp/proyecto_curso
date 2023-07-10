@@ -39,7 +39,7 @@ auth.esAdmin = (req,res,next)=>{
         return res.redirect("/ingresar")
     } else {
         const user = jwt.verify(token,"secret")
-        if(user.tipo_usuario != 'admin'){
+        if(user.id_tipo != 3){
             return res.redirect("/user")
         }
     }

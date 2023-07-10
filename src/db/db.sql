@@ -17,6 +17,8 @@ CREATE TABLE platos (
     FOREIGN KEY (id_categoria) REFERENCES categorias(id)
 );
 
+DROP TABLE platos;
+
 CREATE TABLE usuarios(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
@@ -26,7 +28,7 @@ CREATE TABLE usuarios(
     telefono VARCHAR(14),
     password VARCHAR(100) NOT NULL,
     id_tipo INT NOT NULL,
-    Foreign Key (id_tipo_usuario) REFERENCES tipos_usuarios(id)
+    Foreign Key (id_tipo) REFERENCES tipos_usuarios(id)
 );
 -- 2
 DROP TABLE usuarios;
@@ -57,7 +59,7 @@ DELIMITER//
 CREATE PROCEDURE getUser(IN id INT)
 BEGIN
 
-    SELECT id_usuario,name,lastname,email,birthdate,telefono,id_tipo FROM usuarios WHERE id_usuario = id;
+    SELECT id,nombre,apellido,email,f_nacimiento,telefono,id_tipo FROM usuarios WHERE id = id;
 
 
 END //
@@ -72,3 +74,5 @@ DROP TABLE platos;
 DESC usuarios;
 
 SELECT * FROM usuarios;
+
+DROP PROCEDURE `getUser`;
