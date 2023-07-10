@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken"
-import helpers from "../lib/lib/helpers.js"
+import helpers from "../lib/helpers.js"
 import { pool } from '../config/mysql.connection.js'
-import validate from "../lib/lib/auth.js"
+
+
 export const auth = {}
 
-auth.error = {
+auth.status = {
     message: "",
     autorizado: false
 }
@@ -23,8 +24,8 @@ auth.signupValidate = async(req,res) =>{
         } = req.body;
 
         if (password != confirmPassword) {
-            auth.error.message = "las contraseñas no son iguales"
-            return res.json().redirect("http://localhost:3000/registrarse");
+            auth.status.message = "las contraseñas no son iguales"
+            return res.json(auth.status);
         }
 
         const newPassword = await helpers.encryptPassword(password)
@@ -43,11 +44,13 @@ auth.signupValidate = async(req,res) =>{
 
         const [result] = await pool.query("INSERT INTO usuarios SET ?", [newUser]);
         newUser.id = result.insertId
-        newUser.tipo_usuario = 'user';
+        newUser.tipo_usuario = 1;
 
         const token = jwt.sign(newUser,"secret");
         res.cookie("session",token);
-        res.redirect("/user");
+        auth.status.message = "Bienvenido";
+        auth.status.autorizado = true;
+        res.json(auth.status);
     }
     catch (err) {
         console.error(err)
@@ -59,12 +62,14 @@ auth.signupValidate = async(req,res) =>{
 
 
 auth.signinValidate = async(req,res)=>{
+    console.log("entre")
     try {
         const { email,password } = req.body;
+        console.log(email,password);
     // return res.send("ingresar esta en mantenimiento").redirect("/")
     if(!email || !password) {
-        req.flash("error","por favor rellene todos los campos")
-        return res.redirect("/ingresar")
+        auth.status.message = "rellene todos los campos"
+        return res.json(auth.status);
     }
 
     const [result] = await pool.query("SELECT * FROM usuarios WHERE email = ?",[email]);
@@ -73,15 +78,17 @@ auth.signinValidate = async(req,res)=>{
         const verifyPassword = helpers.matchPassword(result[0].password);
         if(verifyPassword) {
             const token = jwt.sign(result[0],"secret");
+            auth.status.message = "bienvenido";
+            auth.status.autorizado
             res.cookie("session",token);
-            res.redirect("/user");
+            res.json(auth.status);
         }
     }
 
     } catch(err) {
         console.error(err)
-        req.flash("error","el usuario no se encuentra registrado")
-        return res.redirect("/ingresar")
+        auth.status.message = "el usuario no se encuentra registrado";
+        return res.json(auth.status);
     }
 }
 

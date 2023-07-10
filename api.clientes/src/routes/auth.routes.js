@@ -1,17 +1,13 @@
 import { Router } from "express";
-import { auth } from '../controllers/auth.controller.js'
-import validar from '../lib/auth.js'
+import { auth } from "../controller/auth.controller.js";
+import validar from '../lib/auth.js';
 
 
 const router = Router() ;
 
-router.route("/registrarse")
-    .get(validar.inactivo,auth.signup)
-    .post(auth.signupValidate)
+router.post("/registrarse",auth.signupValidate);
 
-router.route("/ingresar")
-    .get(validar.inactivo,auth.signin)
-    .post(validar.inactivo,auth.signinValidate)
+router.post("/ingresar",validar.inactivo,auth.signinValidate);
 
 
 

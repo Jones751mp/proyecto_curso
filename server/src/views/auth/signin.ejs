@@ -13,29 +13,31 @@
     </div>
     <div class="container col-4 p-3 ">
         <div class="row">
-            <form action="http:/localhost:4000/ingresar" method="post">
+            <form>
                 <div class="mb-3 col-12">
                     <h3 class="text-center">
                         Ingresar
-                    </h1>
+                    </h3>
                 </div>
                 <div class="mb-3 col-12">
                     <p class="email"> Ingrese su Email </p>
-                    <input type="email" name="email" class="form-control"/ placeholder="pedroperez@gmail.com">
+                    <input type="email" id="email" class="form-control"/ placeholder="pedroperez@gmail.com">
                 </div>
                 <div class="mb-3 col-12">
                     <p class="password"> Ingrese su Password </p>
-                    <input type="password" name="password" class="form-control"/ placeholder="******">
+                    <input type="password" id="password" class="form-control"/ placeholder="******">
                 </div>
                 <div class="mb-3 col-12">
-                    <input type="submit" value="Ingresar" class="form-control btn btn-primary"/>
+                    <input type="submit" id="Ingresar" class="form-control btn btn-primary"/>
                 </div>
             </form>
         </div>
     </div>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    
 </main>
 
-
+<%-include('../partials/footer',{
+    js:["ingresar"]
+})%>
 </body>
 </html>
