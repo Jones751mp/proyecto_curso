@@ -17,3 +17,15 @@ admin.edit = async(req,res) => {
 
     res.render("admin/edit",{user});
 }
+
+admin.updateUser = async(req,res) => {
+    const { id } = req.params;
+    const {nombre,apellido,email,telefono} = req.body;
+
+    const update = {
+        nombre,apellido,email,telefono
+    }
+
+    await pool.query("UPDATE usuarios SET ? WHERE id = ?",[update,id])
+    res.redirect("/admin")
+}

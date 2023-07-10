@@ -7,7 +7,10 @@ const router =  Router()
 
 router.get("/admin",auth.esAdmin,admin.index)
 
-router.get('/admin/edit/:id',auth.esAdmin,admin.edit)
+router.route('/admin/edit/:id')
+    .get(auth.esAdmin,admin.edit)
+    .post(auth.esAdmin,admin.updateUser)
+
 
 
 
