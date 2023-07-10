@@ -1,4 +1,4 @@
-import { pool } from '../config/mysql.connector.js'
+import { pool } from '../config/mysql.connection.js'
 export const admin = {}
 
 

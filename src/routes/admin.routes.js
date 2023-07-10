@@ -1,6 +1,6 @@
 import { Router } from "express";
-import auth from "../lib/auth.lib.js";
-import { admin } from "../controller/admin.controller.js";
+import auth from "../lib/auth.js";
+import { admin } from "../controllers/admin.controller.js";
 
 
 const router =  Router()

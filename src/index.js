@@ -3,6 +3,7 @@ import router           from          './routes/index.routes.js'
 import platos           from          './routes/platos.routes.js'
 import auth from './routes/auth.routes.js';
 import user from './routes/user.routes.js';
+import admin from './routes/admin.routes.js';
 import                                'ejs'
 import { resolve,join } from          'path'
 import morgan           from          'morgan';
@@ -47,11 +48,15 @@ app.use(router);
 app.use('/platos',platos);
 app.use(auth);
 app.use(user);
+app.use(admin);
 //los archivos estaticos
 
 
 app.use(express.static(join(__dirname,"src/public")))
 app.use((req,res)=> res.render("errors/404.ejs",{user:{}}))
+
+
+
 
 
 app.listen(app.get("port"),()=>{
