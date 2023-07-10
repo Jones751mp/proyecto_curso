@@ -1,19 +1,19 @@
 import { Router } from "express";
-import { auth } from '../controllers/auth.controller.js'
+
 import validar from '../lib/auth.js'
 
 
-const router = Router() ;
+const router = Router();
 
-router.route("/registrarse")
-    .get(validar.inactivo,auth.signup)
-    .post(auth.signupValidate)
+router.get('/ingresar', (req,res)=> {
+    const user = validar.existsUser(req)
+    res.render("auth/signup",{user})
+});
 
-router.route("/ingresar")
-    .get(validar.inactivo,auth.signin)
-    .post(validar.inactivo,auth.signinValidate)
-
-
+router.get('/registrarse', (req,res)=> {
+    const user = validar.existsUser(req)
+    res.render("auth/signin",{user})
+})
 
 
 export default router;

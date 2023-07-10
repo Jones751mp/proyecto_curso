@@ -1,8 +1,7 @@
 import express          from          'express';
 import router           from          './routes/index.routes.js'
 import platos           from          './routes/platos.routes.js'
-import auth from './routes/auth.routes.js';
-import user from './routes/user.routes.js';
+import auth from './routes/auth.routes.js'
 import                                'ejs'
 import { resolve,join } from          'path'
 import morgan           from          'morgan';
@@ -44,8 +43,8 @@ app.use((req,res,next)=>{
 
 app.use(router);
 app.use('/platos',platos);
-app.use(auth);
-app.use(user);
+app.use(auth)
+
 //los archivos estaticos
 
 
