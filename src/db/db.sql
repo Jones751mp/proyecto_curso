@@ -1,4 +1,4 @@
--- Active: 1686681943139@@127.0.0.1@3306@restaurante
+-- Active: 1687916797927@@127.0.0.1@3306@restaurante
 -- SQLBook: Code
 CREATE DATABASE restaurante;
 
@@ -14,6 +14,7 @@ CREATE TABLE platos (
     nombre VARCHAR(50) NOT NULL,
     precio DECIMAL(10,2),
     id_categoria INT NOT NULL,
+    img VARCHAR(255) NOT NULL,
     FOREIGN KEY (id_categoria) REFERENCES categorias(id)
 );
 
@@ -24,7 +25,9 @@ CREATE TABLE usuarios(
     email VARCHAR(50),
     f_nacimiento DATE NOT NULL,
     telefono VARCHAR(14),
-    password VARCHAR(100) NOT NULL
+    password VARCHAR(100) NOT NULL,
+    id_tipo INT NOT NULL,
+    Foreign Key (id_tipo_usuario) REFERENCES tipos_usuarios(id)
 );
 -- 2
 DROP TABLE usuarios;
@@ -51,7 +54,16 @@ DROP TABLE pedidos_clientes;
 
 --reservaciones
 
+DELIMITER//
+CREATE PROCEDURE getUser(IN id INT)
+BEGIN
 
+    SELECT id_usuario,name,lastname,email,birthdate,telefono,id_tipo FROM usuarios WHERE id_usuario = id;
+
+
+END //
+
+DELIMITER ;
 
 
 

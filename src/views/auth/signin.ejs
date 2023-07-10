@@ -1,6 +1,6 @@
 <%-include('../partials/head',{
     title:"ingresar",
-    css:"ingresar"
+    css:["ingresar"]
 })%>
 
 <header>
@@ -33,7 +33,9 @@
             </form>
         </div>
     </div>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <%- include('../partials/footer',{
+        js:[]
+    }) %>
 </main>
 
 

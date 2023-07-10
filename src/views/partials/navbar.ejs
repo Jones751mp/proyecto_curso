@@ -16,16 +16,21 @@
                 <li class="nav-item">
                     <a href="/contact" class="nav-link">contacto</a>
                 </li>
+
                 <% if (user) {%>
+                    <%if(user[0].id_tipo == 2 || user[0].id_tipo == 3){%>
                         <li class="nav-item">
-                            <a href="/platos/create/plato" class="nav-link">Añadir platillo</a>
+                                <a href="/platos/create/plato" class="nav-link">Añadir platillo</a>
                         </li>
+                    <%}%>
                         <li class="nav-item">
                             <a href="/platos/" class="nav-link">platos</a>
                         </li>
                     <li class="nav-item">
                         <a href="/logout" class="nav-link">Cerrar Sesión</a>
                     </li>
+
+
                 <%} else {%>
                     <li class="nav-item">
                         <a href="/ingresar" class="nav-link">

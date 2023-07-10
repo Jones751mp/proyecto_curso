@@ -38,13 +38,14 @@ auth.signupValidate = async(req,res) =>{
             email,
             f_nacimiento,
             telefono,
-            password
+            password,
+            id_tipo:1
         }
         newUser.password = newPassword
 
         const [result] = await pool.query("INSERT INTO usuarios SET ?", [newUser]);
         newUser.id = result.insertId
-        newUser.tipo_usuario = 'user';
+
 
         const token = jwt.sign(newUser,"secret");
         res.cookie("session",token);

@@ -1,6 +1,6 @@
 <%-include("../partials/head", {
     title:"Registro",
-    css:"registro"
+    css:["registro"]
 })  %>
 <body>
     <header>
@@ -58,7 +58,9 @@
             <%- include('../messages/auth.ejs') %>
         </div>
     </main>
-<%-include('../partials/footer')%>
+<%-include('../partials/footer',{
+    js:[]
+})%>
 <!--NO CREE QUE ES MEJOR QUITAR LA NAVBAR AQUI?
 no me deja hacer divs
 -->

@@ -1,6 +1,6 @@
 <%-include('../partials/head',{
     title:"Productos",
-    css:"index"
+    css:["index"]
 })%>
 <body>
     <header>
@@ -19,7 +19,6 @@
             <button class="btn btn-danger" id="delete" data-id="<%=item.id%>">Eliminar</button>
         </div>
     <% }) %>
-    <script src="/js/jquery.js"></script>
-    <script src="/js/platos.js"></script>
-</body>
-</html>
+    <%-include('../partials/footer.ejs',{
+        js:["platos"]
+    })%>

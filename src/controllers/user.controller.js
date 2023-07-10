@@ -5,7 +5,7 @@ export const user = {}
 
 user.index = (req,res)=>{
     const user = auth.existsUser(req)
-    res.render("user/index")
+    res.render("user/index",{user})
 }
 
 user.logout = (req,res)=>{

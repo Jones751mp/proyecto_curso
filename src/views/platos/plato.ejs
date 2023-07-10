@@ -1,0 +1,28 @@
+<%-include('../partials/head.ejs',{
+    title:result[0].nombre,
+    css:[]
+})%>
+
+<main>
+    <header>
+        <%-include('../partials/navbar')%>
+    </header>
+    <% result.forEach( item => {%>
+        <div>
+            <ul>
+                <li>
+                    <span >nombre: <%= item.nombre%> </span>
+                </li>
+                <li>
+                    precio: $<%= item.precio %>
+                </li>
+            </ul>
+            <button class="btn btn-danger" id="delete" data-id="<%=item.id%>">Eliminar</button>
+        </div>
+    <% }) %>
+</main>
+
+
+<%-include('../partials/footer',{
+    js:[]
+})%>

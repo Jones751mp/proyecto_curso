@@ -1,12 +1,12 @@
 <%-include('../partials/head.ejs',{
     title:"Crear producto",
-    css:"create"
+    css:["create"]
 })%>
 <header>
     <%-include("../partials/navbar")%>
 </header>
     <div class="container caja_reg col-4">
-        <form action="/platos/" method="post" class="row">
+        <form action="/platos/" method="post" class="row" enctype="multipart/form-data">
             <div class="titulo">
                 <h1> Registro de Platillos </h1>
             </div>
@@ -18,6 +18,7 @@
                 <h6>Ingrese el precio a incluir:</h6>
                 <input type="number" name="precio" min="1" class="form-control">
             </div>
+            <input type="file" name="img">
             <div class="mb-3 col-12">
                 <select name="id_categoria" class="form-select">
                     <option>elija la categoria</option>
@@ -26,7 +27,7 @@
                     <% }) %>
                 </select>
             </div>
-            
+
             <div class="mb-3 col-12">
                 <button class="btn btn-danger form-control"> Guardar </button>
             </div>

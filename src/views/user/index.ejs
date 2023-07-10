@@ -1,6 +1,6 @@
 <%-include('../partials/head',{
-    title:`${user[0].nombre}`,
-    css:""
+    title:user[0].nombre,
+    css:[""]
 })%>
 
 <header>
@@ -9,5 +9,7 @@
 <main>
     
 </main>
-<%-include('../partials/footer')%>
+<%-include('../partials/footer',{
+    js:[]
+})%>
 

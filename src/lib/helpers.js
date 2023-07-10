@@ -16,4 +16,15 @@ helpers.matchPassword = async(password,savedPassword)=>{
     }
 }
 
+
+
+helpers.randomNumber = () =>{
+    const posible = 'abcdefghijklmnopqrstuwxyz0123456789'
+    let randomNumber = 0;
+    for(let i = 0;i <6; i++){
+        randomNumber += posible.charAt(Math.floor(Math.random() * posible.length))
+    }
+    return randomNumber
+}
+
 export default helpers;

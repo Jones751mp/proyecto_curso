@@ -9,6 +9,7 @@ import morgan           from          'morgan';
 import cookieParser from 'cookie-parser';
 import session      from 'express-session';
 import flash        from 'connect-flash'
+import multer from 'multer';
 
 const app = express();
 
@@ -19,11 +20,11 @@ app.set("views",join(__dirname,"src/views"));
 app.set("view engine",".ejs")
 
 //midlewares ->extensiones del servidor
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(cookieParser())
-
+// app.use(multer({dest: join(__dirname,'./src/public/upload/temp')}).single('image'))
 
 app.use(flash())
 
